@@ -6,7 +6,6 @@
   <groupId>com.ymmihw.spring.boot.libraries</groupId>
   <artifactId>spring-boot-libraries</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <relativePath>../</relativePath>
  </parent>
  <groupId>com.ymmihw.spring.boot</groupId>
  <artifactId>spring-boot-keycloak</artifactId>

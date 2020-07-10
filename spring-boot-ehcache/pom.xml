@@ -6,7 +6,6 @@
   <groupId>com.ymmihw.spring.boot.libraries</groupId>
   <artifactId>spring-boot-libraries</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <relativePath>../</relativePath>
  </parent>
  <groupId>com.ymmihw.spring.boot</groupId>
  <artifactId>spring-boot-ehcache</artifactId>
@@ -15,8 +14,7 @@
  <url>http://maven.apache.org</url>
  <properties>
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  <checkstyle-maven-plugin.version>3.0.0</checkstyle-maven-plugin.version>
-  <dependency.locations.enabled>false</dependency.locations.enabled>
+  <checkstyle-maven-plugin.version>3.1.1</checkstyle-maven-plugin.version>
  </properties>
  <dependencies>
   <dependency>
