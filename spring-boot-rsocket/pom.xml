@@ -7,6 +7,7 @@
   <artifactId>spring-boot-libraries</artifactId>
   <version>0.0.1-SNAPSHOT</version>
  </parent>
+ <groupId>com.ymmihw.spring.boot.libraries</groupId>
  <artifactId>spring-boot-rsocket</artifactId>
  <name>spring-boot-rsocket</name>
  <url>http://maven.apache.org</url>
