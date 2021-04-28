@@ -3,8 +3,7 @@ package com.ymmihw.spring.boot.rsocket.server;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import java.time.Duration;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
@@ -14,14 +13,12 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.messaging.rsocket.RSocketRequester;
 import org.springframework.messaging.rsocket.RSocketStrategies;
 import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.MimeTypeUtils;
 import com.ymmihw.spring.boot.rsocket.model.MarketData;
 import com.ymmihw.spring.boot.rsocket.model.MarketDataRequest;
 import io.rsocket.frame.decoder.PayloadDecoder;
 import io.rsocket.transport.netty.client.TcpClientTransport;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 @TestPropertySource(properties = {"spring.rsocket.server.port=7000"})
 public class MarketDataRSocketControllerLiveTest {
@@ -73,8 +70,7 @@ public class MarketDataRSocketControllerLiveTest {
       return RSocketRequester.builder()
           .rsocketConnector(factory -> factory.dataMimeType(MimeTypeUtils.ALL_VALUE)
               .payloadDecoder(PayloadDecoder.ZERO_COPY))
-          .rsocketStrategies(rSocketStrategies).connect(TcpClientTransport.create(7000)).retry()
-          .block();
+          .rsocketStrategies(rSocketStrategies).transport(TcpClientTransport.create(7000));
     }
   }
 }

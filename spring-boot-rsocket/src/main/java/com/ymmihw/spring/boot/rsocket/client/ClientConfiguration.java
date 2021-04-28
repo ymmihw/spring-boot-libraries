@@ -16,7 +16,6 @@ public class ClientConfiguration {
     return RSocketRequester.builder()
         .rsocketConnector(factory -> factory.dataMimeType(MimeTypeUtils.ALL_VALUE)
             .payloadDecoder(PayloadDecoder.ZERO_COPY))
-        .rsocketStrategies(rSocketStrategies).connect(TcpClientTransport.create(7000)).retry()
-        .block();
+        .rsocketStrategies(rSocketStrategies).transport(TcpClientTransport.create(7000));
   }
 }
