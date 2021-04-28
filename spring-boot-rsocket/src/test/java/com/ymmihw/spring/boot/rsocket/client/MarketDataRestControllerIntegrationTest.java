@@ -3,8 +3,7 @@ package com.ymmihw.spring.boot.rsocket.client;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.http.MediaType.TEXT_EVENT_STREAM;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
@@ -12,7 +11,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.messaging.rsocket.RSocketRequester;
 import org.springframework.messaging.rsocket.RSocketRequester.RequestSpec;
 import org.springframework.messaging.rsocket.RSocketRequester.RetrieveSpec;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.reactive.server.FluxExchangeResult;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import com.ymmihw.spring.boot.rsocket.model.MarketData;
@@ -20,7 +18,6 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-@RunWith(SpringRunner.class)
 @WebFluxTest(value = MarketDataRestController.class)
 public class MarketDataRestControllerIntegrationTest {
 

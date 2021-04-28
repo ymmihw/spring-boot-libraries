@@ -1,8 +1,9 @@
 package com.ymmihw.spring.boot.keycloak;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.when;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.keycloak.KeycloakPrincipal;
 import org.keycloak.KeycloakSecurityContext;
 import org.keycloak.adapters.springboot.client.KeycloakSecurityContextClientRequestInterceptor;
@@ -11,13 +12,9 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockHttpServletRequest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import static org.junit.Assert.assertNotNull;
-import static org.mockito.Mockito.when;
 
-@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = SpringBoot.class)
 public class KeycloakConfigurationIntegrationTest {
 
@@ -32,9 +29,9 @@ public class KeycloakConfigurationIntegrationTest {
   @Mock
   private KeycloakPrincipal<KeycloakSecurityContext> keycloakPrincipal;
 
-  @Before
+  @BeforeEach
   public void setUp() {
-    MockitoAnnotations.initMocks(this);
+    MockitoAnnotations.openMocks(this);
     servletRequest = new MockHttpServletRequest();
     RequestContextHolder.setRequestAttributes(new ServletRequestAttributes(servletRequest));
     servletRequest.setUserPrincipal(keycloakPrincipal);
